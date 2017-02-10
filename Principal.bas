@@ -4,11 +4,9 @@ Attribute VB_Name = "Principal"
 ' Demuestra el uso del control ctlEdit.ctl, que incluye coloreado de sintaxis, y ayuda
 ' contextual.
 '
-' Está basado en el control usado por el Preprocesador de SQL PreSQL.
-' Este código fuente puede ser usado, modificado y redistribuido libremente de acuerdo
-' a su libre criterio, con solo indicar como referencia al autor.
+' EstÃ¡ basado en el control usado por el Preprocesador de SQL PreSQL.
 '
-'                                      Creado por Tito Hinostroza 04/03/2010 - Lima - Perú
+'                                      Creado por Tito Hinostroza 04/03/2010 - Lima - PerÃº
 '
 
 Option Explicit
@@ -16,17 +14,17 @@ Option Explicit
 Public ed_ver_est As Boolean    'bandera de Editor - Ver estado
 Public ed_ver_hor As Boolean    'bandera de Editor - Ver Barra Horizontal
 Public ed_ver_ver As Boolean    'bandera de Editor - Ver Barra Vertical
-Public ed_ver_num As Boolean    'bandera de Editor - Ver Número de línea
+Public ed_ver_num As Boolean    'bandera de Editor - Ver NÃºmero de lÃ­nea
 
 Public ActAyudCon As Boolean    'Activa ayuda contextual
 
-'Constantes de Identificación del programa
+'Constantes de IdentificaciÃ³n del programa
 Public Const NOMB_PROG = "VBEditor"
 
-Const MSJ_ABRIR_ARCH = "Abrir Archivo"   'Mensaje del cuadro de diálogo
-Const MSJ_GUARD_ARCH = "Guardar Archivo" 'Mensaje del cuadro de diálogo
+Const MSJ_ABRIR_ARCH = "Abrir Archivo"   'Mensaje del cuadro de diÃ¡logo
+Const MSJ_GUARD_ARCH = "Guardar Archivo" 'Mensaje del cuadro de diÃ¡logo
 
-'API's para cuadro de diálogo de abrir archivo. No se usa controles de VB para hacer más transportable el programa
+'API's para cuadro de diÃ¡logo de abrir archivo. No se usa controles de VB para hacer mÃ¡s transportable el programa
 Declare Function GetOpenFileName Lib "comdlg32.dll" Alias "GetOpenFileNameA" (pOpenfilename As OPENFILENAME) As Long
 Declare Function GetSaveFileName Lib "comdlg32.dll" Alias "GetSaveFileNameA" (pOpenfilename As OPENFILENAME) As Long
 
@@ -55,7 +53,7 @@ End Type
 
 '------------------------------------------------------------------------
 Public Function Posit(num As Single) As Single
-'Devuelve siempre un número positivo o cero
+'Devuelve siempre un nÃºmero positivo o cero
     If num < 0 Then Posit = 0 Else Posit = num
 End Function
 
@@ -63,7 +61,7 @@ Public Function DialogoAbrir(hWnd As Long, _
     tipArch As String, extArchiv As String, _
     Optional InitialDir As String = "C:\", _
     Optional titulo As String = MSJ_ABRIR_ARCH) As String
-'Si se canceló devuelve "". Si se seleccionó un archivo, devuelve archivo.
+'Si se cancelÃ³ devuelve "". Si se seleccionÃ³ un archivo, devuelve archivo.
 Dim OpDlg As OPENFILENAME
 Dim tmp As String
 'Inicia estructura de Nombre de archivo
